@@ -13,12 +13,14 @@
         @endif
 
         @if($updateMode)
-            @include('livewire.update')
+            @include('livewire.link-update')
         @else
-            @include('livewire.create')
+            @include('livewire.link-create')
         @endif
 
-        <table class="min-w-full bg-white">
+        <x-jet-section-border />
+
+        <table class="min-w-full bg-white mt-8">
             <thead class="bg-gray-800 text-white">
                 <tr>
                     <th class="text-left py-3 px-4 uppercase font-semibold text-sm">id</th>
@@ -31,7 +33,7 @@
             <tbody class="text-gray-700">
                 @foreach($data as $row)
                     <tr>
-                        <td class="text-left py-3 px-4">{{$loop->index + 1}}</td>
+                        <td class="text-left py-3 px-4">{{$row->id}}</td>
                         <td class="text-left py-3 px-4">{{$row->key}}</td>
                         <td class="text-left py-3 px-4">{{$row->url}}</td>
                         <td class="text-left py-3 px-4">

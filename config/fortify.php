@@ -133,8 +133,8 @@ return [
     'features' => [
         //Features::registration(),
         //Features::resetPasswords(),
-        // Features::emailVerification(),
-        Features::updateProfileInformation(),
+        //Features::emailVerification(),
+        //Features::updateProfileInformation(),
         //Features::updatePasswords(),
         //Features::twoFactorAuthentication([
         //    'confirmPassword' => true,
