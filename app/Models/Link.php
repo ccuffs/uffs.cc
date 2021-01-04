@@ -2,21 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Link extends Model
 {
-    use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
     use Notifiable;
-    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -24,10 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'uid',
-        'name',
-        'email',
-        'password',
+        'user_id',
+        'key',
+        'url'
     ];
 
     /**
@@ -36,10 +28,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
     ];
 
     /**
@@ -48,7 +36,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 
     /**
@@ -57,14 +44,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
     ];
 
     /**
      * Get the comments for the blog post.
      */
-    public function links()
+    public function user()
     {
-        return $this->hasMany(Link::class);
+        return $this->belongsTo(User::class);
     }
 }
