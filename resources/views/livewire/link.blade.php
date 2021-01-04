@@ -18,25 +18,29 @@
             @include('livewire.create')
         @endif
 
-        <table class="table table-striped" style="margin-top:20px;">
-            <tr>
-                <td>NO</td>
-                <td>key</td>
-                <td>url</td>
-                <td>ACTION</td>
-            </tr>
-
-            @foreach($data as $row)
+        <table class="min-w-full bg-white">
+            <thead class="bg-gray-800 text-white">
                 <tr>
-                    <td>{{$loop->index + 1}}</td>
-                    <td>{{$row->key}}</td>
-                    <td>{{$row->url}}</td>
-                    <td>
-                        <button wire:click="edit({{$row->id}})" class="btn btn-sm btn-outline-danger py-0">Edit</button> | 
-                        <button wire:click="destroy({{$row->id}})" class="btn btn-sm btn-outline-danger py-0">Delete</button>
-                    </td>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">id</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">key</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">url</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm"></th>
                 </tr>
-            @endforeach
+            </thead>
+            
+            <tbody class="text-gray-700">
+                @foreach($data as $row)
+                    <tr>
+                        <td class="text-left py-3 px-4">{{$loop->index + 1}}</td>
+                        <td class="text-left py-3 px-4">{{$row->key}}</td>
+                        <td class="text-left py-3 px-4">{{$row->url}}</td>
+                        <td class="text-left py-3 px-4">
+                            <button wire:click="edit({{$row->id}})" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Edit</button> | 
+                            <button wire:click="destroy({{$row->id}})" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 </div>
