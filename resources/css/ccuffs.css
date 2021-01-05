@@ -4,6 +4,7 @@
     --ccuffs-tertiary: #F0556B;
     --ccuffs-bg: #343433;
     --ccuffs-bg-light: #424242;
+    --ccuffs-bg-strong: #2a2a2a;
     --ccuffs-line: #717081;
 }
 
@@ -15,6 +16,10 @@
 
 .bg-ccuffs-light {
     background-color: var(--ccuffs-bg-light);
+}
+
+.bg-ccuffs-strong {
+    background-color: var(--ccuffs-bg-strong);
 }
 
 .bg-ccuffs-primary {
