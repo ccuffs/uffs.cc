@@ -37,8 +37,8 @@
                         <td class="text-left py-3 px-4">{{$row->key}}</td>
                         <td class="text-left py-3 px-4">{{$row->url}}</td>
                         <td class="text-left py-3 px-4">
-                            <button wire:click="edit({{$row->id}})" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Edit</button> | 
-                            <button wire:click="destroy({{$row->id}})" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Delete</button>
+                            <button wire:click="edit({{$row->id}})" class="inline-flex items-center px-4 py-2 border border-gray-600 rounded-md font-semibold text-xs text-gray uppercase hover:bg-gray-700 hover:text-white active:border-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150"><i class="far fa-edit"></i> Edit</button> | 
+                            <button wire:click="destroy({{$row->id}})" class="inline-flex items-center px-4 py-2 border border-gray-600 rounded-md font-semibold text-xs text-gray uppercase hover:bg-gray-700 hover:text-white active:border-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">Delete</button>
                         </td>
                     </tr>
                 @endforeach
